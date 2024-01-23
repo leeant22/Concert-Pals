@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/img/background.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 1rem;
+    background-color: #0d0200;
+    text-align: right;
+    z-index: 1;
+}
+
+.nav-bar ul li {
+    display: inline;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.nav-bar ul li:last-child {
+    padding-right: 3rem;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar ul li a:hover {
+    color: white;
+    border-bottom: white solid 0.8rem;
+    transition: 0.25s ease-out;
+}
+
+header {
+    padding-top: 6rem;
+}
+
+header h1, h2 {
+    text-align: center;
+    color: white;
+    font-family: "Kaushan Script", fantasy, sans-serif;
+}
+
+header h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px white;
+    margin-bottom: 0;
+}
+
+header h2 {
+    font-size: 2rem;
+    text-shadow: 2px 2px white;
+    margin-top: 0;
+    color: white;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 15vh;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer p:first-child {
+    padding-top: 2rem;
+}
+
+figcaption {
+    text-align: center;
+}
+
+header h2:nth-child(2) {
+    margin-bottom: 5rem;
+}
