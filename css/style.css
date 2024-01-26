@@ -156,3 +156,32 @@ figcaption {
     margin-top: 10px;
     padding: 5px;
 }
+
+.groups-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.group-card {
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.group-members {
+    margin-top: 10px;
+}
+
+.join-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.find-groups {
+    text-align: center;
+}
