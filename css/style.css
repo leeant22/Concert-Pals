@@ -185,3 +185,16 @@ figcaption {
 .find-groups {
     text-align: center;
 }
+
+.details {
+    flex-grow: 1;
+}
+
+.details-page {
+    background-color: white;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
