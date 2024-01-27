@@ -91,10 +91,6 @@ footer p:first-child {
     padding-top: 2rem;
 }
 
-figcaption {
-    text-align: center;
-}
-
 .main-page header h2:nth-child(2) {
     margin-bottom: 5rem;
 }
