@@ -180,6 +180,11 @@ footer p:first-child {
 
 .find-groups {
     text-align: center;
+    font-family: sans-serif;
+}
+
+.event-name {
+    font-family: sans-serif;
 }
 
 .details {
