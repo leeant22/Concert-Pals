@@ -1,0 +1,23 @@
+header {
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: azure;
+    background-color: green;
+}
+
+.problem-domain, .app-description {
+    margin: 10px;
+}
+
+.problem-domain h2, .app-description h2 {
+    color: purple;
+}
+
+.problem-domain h3, .app-description h3 {
+    font-size: 1.2em;
+}
+
+a {
+    color: blue;
+}
