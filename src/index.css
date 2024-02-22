@@ -15,48 +15,50 @@
   flex-grow: 1;
 }
 
-.nav-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-top: 1rem;
-  background-color: #0d0200;
-  text-align: right;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-}
+@media screen and (min-width: 640px) {
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 1rem;
+    background-color: #0d0200;
+    text-align: right;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+  }
 
-.nav-bar ul li {
-  display: inline;
-  padding: 1rem;
-  font-size: 1.2rem;
-}
+  .nav-bar ul li {
+    display: inline;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
 
-.nav-bar ul li:last-child {
-  padding-right: 3rem;
-}
+  .nav-bar ul li:last-child {
+    padding-right: 3rem;
+  }
 
-.nav-bar ul li a {
-  text-decoration: none;
-  color: white;
-}
+  .nav-bar ul li a {
+    text-decoration: none;
+    color: white;
+  }
 
-.nav-bar ul li a i {
-  margin-right: 7px;
-}
+  .nav-bar ul li a i {
+    margin-right: 7px;
+  }
 
-.nav-bar ul li a:hover {
-  color: white;
-  border-bottom: white solid 0.8rem;
-  transition: 0.25s ease-out;
-}
+  .nav-bar ul li a:hover {
+    color: white;
+    border-bottom: white solid 0.8rem;
+    transition: 0.25s ease-out;
+  }
 
-.title {
-  margin-left: 20px; 
-  font-size: 1.5rem; 
-  color: white; 
+  .title {
+    margin-left: 20px; 
+    font-size: 1.5rem; 
+    color: white; 
+  }
 }
 
 header {
@@ -307,14 +309,14 @@ main.contact-page {
   margin-bottom: 0.5rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
   .event-form-group input,
   .event-form-group textarea {
       width: 100%;
   }
 }
 
-@media (max-width: 500px) {
+@media (min-wdith: 500px) {
   .nav-bar ul {
       display: flex;
       flex-direction: column;
