@@ -1,0 +1,7 @@
+[
+    {"event" : "Event 1", "date": "May 1st 2024", "path" : "img/card1.png", "source": "Yvette de Wit"},
+    {"event" : "Event 2", "date": "June 1st 2024", "path" : "img/card2.png", "source": "Nainoa Shizuru"},
+    {"event" : "Event 3", "date": "July 4th 2024", "path" : "img/card3.png", "source": "Danny Howe"},
+    {"event" : "Event 4", "date": "August 10th 2024", "path" : "img/card4.png", "source": "Yannis Papanastasopoulos"},
+    {"event" : "Event 5", "date": "September 21st 2024", "path" : "img/card5.png", "source": "Nathan Fertig"}
+]
