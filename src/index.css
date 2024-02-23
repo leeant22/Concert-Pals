@@ -15,6 +15,61 @@
   flex-grow: 1;
 }
 
+.hamburger {
+  color: white;
+  font-size: 2rem;
+  padding-left: 10px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+}
+
+.show-icons {
+  padding-top: 10px;
+}
+
+.show-icons li {
+  display: inline;
+  font-size: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+.show-icons i {
+  text-decoration: none;
+  color: white;
+}
+
+.hide-icons {
+  display: none;
+}
+
+.nav-bar.show-menu.visible {
+  justify-content: center;
+}
+
+.show-menu.visible li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.show-menu.visible ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
 @media screen and (min-width: 640px) {
   .nav-bar {
     position: fixed;
@@ -316,7 +371,7 @@ main.contact-page {
   }
 }
 
-@media (min-wdith: 500px) {
+@media screen and (min-wdith: 500px) {
   .nav-bar ul {
       display: flex;
       flex-direction: column;
