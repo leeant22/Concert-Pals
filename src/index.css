@@ -3,7 +3,7 @@
 }
 
 .main-page {
-  background-image: url('./../public/img/background.jpg');
+  background-color: #333333;
   background-size: cover;
   min-height: 100vh;
   display: flex;
@@ -70,58 +70,12 @@
   display: none;
 }
 
-@media screen and (min-width: 640px) {
-  .nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 1rem;
-    background-color: #0d0200;
-    text-align: right;
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-bar ul li {
-    display: inline;
-    padding: 1rem;
-    font-size: 1.2rem;
-  }
-
-  .nav-bar ul li:last-child {
-    padding-right: 3rem;
-  }
-
-  .nav-bar ul li a {
-    text-decoration: none;
-    color: white;
-  }
-
-  .nav-bar ul li a i {
-    margin-right: 7px;
-  }
-
-  .nav-bar ul li a:hover {
-    color: white;
-    border-bottom: white solid 0.8rem;
-    transition: 0.25s ease-out;
-  }
-
-  .title {
-    margin-left: 20px; 
-    font-size: 1.5rem; 
-    color: white; 
-  }
-}
-
 header {
   padding-top: 6rem;
 }
 
 .home {
-  padding-top: 12rem;
+  padding-top: 8rem;
 }
 
 header h1, h2 {
@@ -204,23 +158,23 @@ footer p:first-child {
   border-radius: 8px;
 }
 
-#mark-interested-btn, #mark-going-btn {
+.mark-interested-btn, .mark-going-btn {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 8px 16px;
   cursor: pointer;
 }
 
-#users-list {
+.users-list {
   list-style: none;
   padding: 0;
 }
 
-#users-list li {
+.users-list li {
   margin-bottom: 5px;
 }
 
-#search-input {
+.search-input {
   margin-top: 10px;
   padding: 5px;
 }
@@ -364,6 +318,11 @@ main.contact-page {
   margin-bottom: 0.5rem;
 }
 
+.filter {
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 600px) {
   .event-form-group input,
   .event-form-group textarea {
@@ -404,5 +363,51 @@ main.contact-page {
   
   .groups {
       padding-top: 18rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 1rem;
+    background-color: #0d0200;
+    text-align: right;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-bar ul li {
+    display: inline;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .nav-bar ul li:last-child {
+    padding-right: 3rem;
+  }
+
+  .nav-bar ul li a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .nav-bar ul li a i {
+    margin-right: 7px;
+  }
+
+  .nav-bar ul li a:hover {
+    color: white;
+    border-bottom: white solid 0.8rem;
+    transition: 0.25s ease-out;
+  }
+
+  .title {
+    margin-left: 20px; 
+    font-size: 1.5rem; 
+    color: white; 
   }
 }

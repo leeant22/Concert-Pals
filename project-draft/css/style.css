@@ -134,23 +134,23 @@ footer p:first-child {
     border-radius: 8px;
 }
 
-#mark-interested-btn, #mark-going-btn {
+.mark-interested-btn, .mark-going-btn {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 8px 16px;
     cursor: pointer;
 }
 
-#users-list {
+.users-list {
     list-style: none;
     padding: 0;
 }
 
-#users-list li {
+.users-list li {
     margin-bottom: 5px;
 }
 
-#search-input {
+.search-input {
     margin-top: 10px;
     padding: 5px;
 }

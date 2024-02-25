@@ -1,8 +1,12 @@
 import React from 'react';
 
-export function Cards({events}) {
+export function Cards({events, month}) {
     const eventList = events.map((item, index) => {
-        return <CreateEvents key={index} name={item.event} date={item.date} path={item.path} source={item.source}/>;
+        const eventMonth = item.date.substring(0, item.date.indexOf(' '));
+        if(month === '' || eventMonth === month) {
+            return <CreateEvents key={index} name={item.event} date={item.date} path={item.path} source={item.source}/>;
+        }
+        return null;
     });
     return (
         <div>

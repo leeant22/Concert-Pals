@@ -74,7 +74,7 @@ export function Profile() {
                                 <option value="R&B">R&B</option>
                             </select>
                         </div>
-                        <button type="button" className="btn btn-success">Save</button>
+                        <button type="button" className="btn btn-success mb-3">Save</button>
                     </div>
                 </div>
             </div>
