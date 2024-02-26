@@ -14,6 +14,11 @@ export function CreateEventPage() {
         setSubmitForm(true);
     }
 
+    let submissionMessage = null;
+    if(submitForm) {
+        submissionMessage = <p>Your event has been submitted!</p>
+    }
+
     return (
         <><div className="event-creation-page">
             <main>
@@ -37,7 +42,8 @@ export function CreateEventPage() {
                 </div>
                 <button type="submit">Submit Your Event</button>
             </form>
-            {submitForm && <p>Your event has been submitted!</p>}
+            {/* {submitForm && <p>Your event has been submitted!</p>} */}
+            {submissionMessage}
             </main>
         </div>
         <Footer /></>
