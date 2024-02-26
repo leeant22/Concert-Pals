@@ -4,6 +4,7 @@ import { HomePage } from './Home.js';
 import { Profile } from './Profile.js';
 import { CreateEventPage } from './Create-Event.js';
 import { Route, Routes } from 'react-router-dom';
+import { ContactForm } from './Contact.js';
 
 function App(props) {
     return (
@@ -12,7 +13,7 @@ function App(props) {
             <Routes>
                 <Route path="/" element={<HomePage data={props.events}/>}/>
                 <Route path="/groups" element={<HomePage data={props.events}/>}/>
-                <Route path="/contact" element={<HomePage data={props.events}/>}/>
+                <Route path="/contact" element={<ContactForm/>}/>
                 {/* <Route path="/create-event" element={<HomePage data={props.events}/>}/> */}
                 <Route path="/create-event" element={<CreateEventPage/>}/>
                 <Route path="/profile" element={<Profile/>}/>
