@@ -4,12 +4,13 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css';
 import App from './components/App';
 import concerts from './data/events.json';
+import buddies from './data/groups.json';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App events={concerts} />
+      <App events={concerts} groups={buddies}/>
     </BrowserRouter>
   </React.StrictMode>
 );

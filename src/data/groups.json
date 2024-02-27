@@ -1,0 +1,58 @@
+[
+    {
+        "groupName": "EDM Enthusiasts",
+        "eventName": "Event 1",
+        "groupCapacity": 7,
+        "creatorEmail": "musiclover@gmail.com",
+        "eventDate": "May 1st 2024"
+      },
+      {
+        "groupName": "R&B Adventures",
+        "eventName": "Event 3",
+        "groupCapacity": 4,
+        "creatorEmail": "outdoorsy@hotmail.com",
+        "eventDate": "July 4th 2024"
+      },
+      {
+        "groupName": "Rap Monsters",
+        "eventName": "Event 2",
+        "groupCapacity": 12,
+        "creatorEmail": "codenerd@gmail.com",
+        "eventDate": "June 1st 2024"
+      },
+      {
+        "groupName": "Candy Rappers",
+        "eventName": "Event 2",
+        "groupCapacity": 8,
+        "creatorEmail": "paddington@yahoo.com",
+        "eventDate": "June 1st 2024"
+      },
+      {
+        "groupName": "EDM Raverss",
+        "eventName": "Event 1",
+        "groupCapacity": 15,
+        "creatorEmail": "bahamagirl@gmail.com",
+        "eventDate": "May 1st 2024"
+      },
+      {
+        "groupName": "Popping millenials",
+        "eventName": "Event 4",
+        "groupCapacity": 5,
+        "creatorEmail": "backtoschool@gmail.com",
+        "eventDate": "August 10th 2024"
+      },
+      {
+        "groupName": "Madness Pops",
+        "eventName": "Event 4",
+        "groupCapacity": 10,
+        "creatorEmail": "meercat@gmail.com",
+        "eventDate": "August 10th 2024"
+      },
+      {
+        "groupName": "Country Mice Have Lice",
+        "eventName": "Event 5",
+        "groupCapacity": 3,
+        "creatorEmail": "watermelon123@gmail.com",
+        "eventDate": "September 21st 2024"
+      }
+] 
