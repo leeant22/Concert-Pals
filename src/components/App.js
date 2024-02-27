@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { NavBar } from './Nav.js';
 import { HomePage } from './Home.js';
 import { Profile } from './Profile.js';

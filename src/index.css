@@ -321,6 +321,7 @@ main.contact-page {
 .filter {
   border: 3px solid white;
   border-radius: 5px;
+  min-width: 125px;
 }
 
 @media screen and (min-width: 600px) {
