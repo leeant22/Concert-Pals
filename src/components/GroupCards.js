@@ -2,7 +2,6 @@ import React from 'react';
 
 export function GroupCards({ groups, event }) {
     const groupList = groups.map((group, index) => {
-        // Assuming the date is stored in the 'eventDate' field
         if (event === '' || group.eventName === event) {
             return <CreateGroup key={index} groupName={group.groupName} eventName={group.eventName} eventDate={group.eventDate} groupCapacity={group.groupCapacity} creatorEmail={group.creatorEmail} />;
         }
