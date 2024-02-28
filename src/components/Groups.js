@@ -13,9 +13,10 @@ export function GroupsPage({data}) {
             <div className="main-page">
                 <main className="home">
                     <div className='container'>
+                        <label className='filter-label' for='selectEvent'>Select Month:</label>
                         <div className="row">
                             <div className='text-right'>
-                                <select className="filter mb-3 col-3" value={filter} onChange={filterChange}>
+                                <select className="filter mb-3 col-3" value={filter} onChange={filterChange} name='selectEvent' id='selectEvent'>
                                     <option value="">Select Event</option>
                                     <option value="Event 1">Event 1</option>
                                     <option value="Event 2">Event 2</option>

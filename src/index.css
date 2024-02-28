@@ -323,6 +323,11 @@ main.contact-page {
   border-radius: 5px;
   min-width: 125px;
 }
+
+.filter-label {
+  color: white;
+  font-style: strong;
+}
 /* Mobile screen rules */
 @media screen and (min-width: 600px) {
   .event-form-group input,
