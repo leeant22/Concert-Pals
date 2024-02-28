@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
+/* Rules for main page */
 .main-page {
   background-color: #333333;
   background-size: cover;
@@ -14,7 +14,7 @@
 .home{
   flex-grow: 1;
 }
-
+/* Nav bar rules */
 .hamburger {
   color: white;
   font-size: 2rem;
@@ -69,7 +69,7 @@
 .hide {
   display: none;
 }
-
+/*  */
 header {
   padding-top: 6rem;
 }
@@ -96,7 +96,7 @@ header h2 {
   margin-top: 0;
   color: white;
 }
-
+/* Footer rules */
 footer {
   background-color: black;
   color: white;
@@ -120,7 +120,7 @@ footer p:first-child {
 .main-page header h2:nth-child(2) {
   margin-bottom: 5rem;
 }
-
+/* Profile page rules */
 .profile-page {
   background-color: white;
   background-size: cover;
@@ -149,7 +149,7 @@ footer p:first-child {
 .profile-page {
   margin-top: 2rem;
 }
-
+/* Event detail rules */
 .event-details {
   max-width: 600px;
   margin: 50px auto;
@@ -178,7 +178,7 @@ footer p:first-child {
   margin-top: 10px;
   padding: 5px;
 }
-
+/* Group card rules */
 .groups-container {
   display: flex;
   flex-wrap: wrap;
@@ -212,7 +212,7 @@ footer p:first-child {
 .event-name {
   font-family: sans-serif;
 }
-
+/* Detail page rules */
 .details {
   flex-grow: 1;
 }
@@ -225,7 +225,7 @@ footer p:first-child {
   flex-direction: column;
   margin: 0;
 }
-
+/* Contact page rules */
 .contact-page {
   background-color: white;
   background-size: cover;
@@ -273,7 +273,7 @@ main.contact-page {
   padding: 8px 16px;
   cursor: pointer;
 }
-
+/* Create events page */
 .create-events-page {
   background-color: white;
   background-size: cover;
@@ -317,13 +317,13 @@ main.contact-page {
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
-
+/* Filter events rules */
 .filter {
   border: 3px solid white;
   border-radius: 5px;
   min-width: 125px;
 }
-
+/* Mobile screen rules */
 @media screen and (min-width: 600px) {
   .event-form-group input,
   .event-form-group textarea {

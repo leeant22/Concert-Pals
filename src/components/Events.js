@@ -29,7 +29,7 @@ function CreateEvents({name, date, path, source}) {
                     <div className="pt-2 text-center">
                         <h2 className="card-title">{name}</h2>
                         <p className="card-text">Date: {date}</p>
-                        <a href="details.html" className="btn btn-dark">Details</a>
+                        <a href="#" className="btn btn-dark">Details</a>
                     </div>
                 </div>
             </div>
