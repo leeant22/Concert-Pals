@@ -1,2 +1,2 @@
-#About
+# About
 This is a webapp called Concert Pals. Our goal is to help concert goers meet others and have a good time together. The webapp provides ways to see upcoming events, find groups, and create new events for others to go to. Users are able to create profiles specifying their interests connecting them with others who have similar interests. We hope to make concert going more enjoyable and help connect individuals.
