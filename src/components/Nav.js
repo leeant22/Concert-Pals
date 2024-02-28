@@ -16,7 +16,7 @@ export function NavBar() {
 
     useEffect(() => {
         const handleResize = () => {
-          setWideScreen(window.innerWidth > 640);
+          setWideScreen(window.innerWidth > 785);
         };
         window.addEventListener('resize', handleResize);
         handleResize();

@@ -367,7 +367,7 @@ main.contact-page {
   }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 785px) {
   .nav-bar {
     position: fixed;
     top: 0;
