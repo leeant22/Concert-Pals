@@ -12,7 +12,7 @@ function App(props) {
         <div>
             <NavBar/>
             <Routes>
-                <Route path="/" element={<HomePage data={props.events}/>}/>
+                <Route path="/" element={<HomePage/>}/>
                 <Route path="/groups" element={<GroupsPage data={props.groups}/>}/>
                 <Route path="/create-group" element={<CreateGroupPage />} />
                 <Route path="/contact" element={<ContactForm/>}/>

@@ -1,13 +1,22 @@
 import React from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
-export function Cards({events, month}) {
-    const eventList = events.map((item, index) => {
-        const eventMonth = item.date.substring(0, item.date.indexOf(' '));
-        if(month === '' || eventMonth === month) {
-            return <CreateEvents key={index} name={item.event} date={item.date} path={item.path} source={item.source}/>;
-        }
-        return null;
-    });
+export function Cards({month}) {
+    const db = getDatabase();
+    const dbEvents = ref(db, 'events');
+    const eventList = [];
+    let count = 0;
+    onValue(dbEvents, (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            const currentEvent = childSnapshot.val();
+            const eventMonth = currentEvent.date.substring(0, currentEvent.date.indexOf(' '));
+            if(month === "" || eventMonth === month) {
+                eventList.push(<CreateEvents key={count} name={currentEvent.event} date={currentEvent.date} path={currentEvent.path} source={currentEvent.source}/>);
+            }
+            count += 1;
+        })
+    })
+    console.log(eventList)
     return (
         <div>
             <div className="container">

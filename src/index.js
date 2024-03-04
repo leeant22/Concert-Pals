@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom'
+import { initializeApp } from "firebase/app";
 import './index.css';
 import App from './components/App';
-import concerts from './data/events.json';
 import buddies from './data/groups.json';
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAa0Uq8ggZjAgtebhDHFtwJQxNNDC8ZagA",
+  authDomain: "concert-pals.firebaseapp.com",
+  databaseURL: "https://concert-pals-default-rtdb.firebaseio.com",
+  projectId: "concert-pals",
+  storageBucket: "concert-pals.appspot.com",
+  messagingSenderId: "90361025746",
+  appId: "1:90361025746:web:1fe3d97fb52494b2bbc90b"
+};
+
+const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App events={concerts} groups={buddies}/>
+      <App groups={buddies}/>
     </BrowserRouter>
   </React.StrictMode>
 );

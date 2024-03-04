@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Cards } from './Events.js';
 import { Footer } from './Footer.js';
 
-export function HomePage({data}) {
-    const [filter, setFilter] = useState('');
+export function HomePage() {
+    const [filter, setFilter] = useState("");
     const filterChange = (event) => {
         setFilter(event.target.value);
     };
@@ -13,7 +13,7 @@ export function HomePage({data}) {
             <div className="main-page">
                 <main className="home">
                     <div className='container'>
-                        <label className='filter-label' for='selectMonth'>Select Month:</label>
+                        <label className='filter-label' htmlFor='selectMonth'>Select Month:</label>
                         <div className="row">
                             <div className='text-right'>
                                 <div className="mb-3 col-3">
@@ -36,7 +36,7 @@ export function HomePage({data}) {
                             </div>
                         </div>
                     </div>
-                    <Cards events={data} month={filter}/>
+                    <Cards month={filter}/>
                 </main>
             </div>
             <Footer/>
