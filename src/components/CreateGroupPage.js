@@ -25,7 +25,7 @@ export function CreateGroupPage() {
         <>
             <div className="event-creation-page">
                 <main>
-                <h2 style={{ color: 'black', fontSize: '2rem', marginBottom: '20px', fontStyle: 'italic' }}>Create Group</h2>
+                <h2>Create Group</h2>
                     <form onSubmit={handleSubmit} className="group-form">
                         <div className="event-form-group">
                             <label htmlFor="groupName">Group Name:</label>

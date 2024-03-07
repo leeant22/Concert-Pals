@@ -22,7 +22,7 @@ export function CreateEventPage() {
     return (
         <><div className="event-creation-page">
             <main>
-            <h2 style={{ color: 'black' }}>Create Your Event</h2>
+            <h2>Create Your Event</h2>
             <form onSubmit={handleSubmit}>
                 <div className="event-form-group">
                     <label htmlFor="eventName">What is your event called?</label>

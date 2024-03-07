@@ -1,3 +1,4 @@
+import { Navigate } from 'react-router-dom';
 import { NavBar } from './Nav.js';
 import { HomePage } from './Home.js';
 import { Profile } from './Profile.js';
@@ -19,6 +20,7 @@ function App(props) {
                 {/* <Route path="/create-event" element={<HomePage data={props.events}/>}/> */}
                 <Route path="/create-event" element={<CreateEventPage/>}/>
                 <Route path="/profile" element={<Profile/>}/>
+                <Route path='*' element={<Navigate to="/"/>}/>
             </Routes>
         </div>
     );
