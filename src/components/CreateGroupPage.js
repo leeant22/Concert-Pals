@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getDatabase, ref, push } from 'firebase/database';
 import { Footer } from './Footer.js';
 
 export function CreateGroupPage() {
@@ -10,11 +11,35 @@ export function CreateGroupPage() {
     const [eventDate, setEventDate] = useState("");
     const [submitForm, setSubmitForm] = useState(false);
 
-    const handleSubmit = (event) => {
+    const db = getDatabase();
+    const dbGroups = ref(db, 'groups');
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     console.log("Successfully submitted group:", { groupName, eventName, groupCapacity, ageRange, creatorEmail, eventDate });
+    //     setSubmitForm(true);
+    // }
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("Successfully submitted group:", { groupName, eventName, groupCapacity, ageRange, creatorEmail, eventDate });
-        setSubmitForm(true);
-    }
+
+        const newGroupData = {
+            groupName,
+            eventName,
+            groupCapacity,
+            ageRange,
+            creatorEmail,
+            eventDate,
+        };
+
+        // Push new group data to Firebase
+        try {
+            await push(dbGroups, newGroupData);
+            setSubmitForm(true);
+        } catch (error) {
+            console.error("Error submitting group:", error);
+        }
+    };
 
     let submissionMessage = null;
     if (submitForm) {

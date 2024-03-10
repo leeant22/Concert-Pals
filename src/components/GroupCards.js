@@ -31,27 +31,6 @@ export function GroupCards({event}) {
     );
 }
 
-// export function GroupCards({ groups, event }) {
-//     const groupList = groups.map((group, index) => {
-//         if (event === '' || group.eventName === event) {
-//             return <CreateGroup key={index} groupName={group.groupName} eventName={group.eventName} eventDate={group.eventDate} groupCapacity={group.groupCapacity} creatorEmail={group.creatorEmail} />;
-//         }
-//         return null;
-//     });
-
-//     return (
-//         <div>
-//             <div className="container">
-//                 <div className="row">
-//                     {groupList}
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-
-
 function CreateGroup({ groupName, eventName, eventDate, groupCapacity, creatorEmail }) {
     return (
         <div className="col-xl-3 col-md-6 d-flex">
