@@ -14,12 +14,6 @@ export function CreateGroupPage() {
     const db = getDatabase();
     const dbGroups = ref(db, 'groups');
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log("Successfully submitted group:", { groupName, eventName, groupCapacity, ageRange, creatorEmail, eventDate });
-    //     setSubmitForm(true);
-    // }
-
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -31,8 +25,7 @@ export function CreateGroupPage() {
             creatorEmail,
             eventDate,
         };
-
-        // Push new group data to Firebase
+        
         try {
             await push(dbGroups, newGroupData);
             setSubmitForm(true);
