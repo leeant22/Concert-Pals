@@ -27,7 +27,7 @@ export function GroupsPage({data}) {
                             </div>
                         </div>
                     </div>
-                    <GroupCards groups={data} event={filter}/>
+                    <GroupCards event={filter}/>
                 </main>
             </div>
             <Footer/>

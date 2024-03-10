@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { initializeApp } from "firebase/app";
 import './index.css';
 import App from './components/App';
-import buddies from './data/groups.json';
+// import buddies from './data/groups.json';
 
 
 const firebaseConfig = {
@@ -23,7 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App groups={buddies}/>
+      <App/>
     </BrowserRouter>
   </React.StrictMode>
 );

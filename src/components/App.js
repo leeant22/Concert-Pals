@@ -14,10 +14,9 @@ function App(props) {
             <NavBar/>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
-                <Route path="/groups" element={<GroupsPage data={props.groups}/>}/>
+                <Route path="/groups" element={<GroupsPage/>}/>
                 <Route path="/create-group" element={<CreateGroupPage />} />
                 <Route path="/contact" element={<ContactForm/>}/>
-                {/* <Route path="/create-event" element={<HomePage data={props.events}/>}/> */}
                 <Route path="/create-event" element={<CreateEventPage/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path='*' element={<Navigate to="/"/>}/>
