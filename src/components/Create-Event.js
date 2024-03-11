@@ -1,18 +1,33 @@
 import React, { useState } from 'react';
+import { getDatabase, ref, push } from 'firebase/database';
 import { Footer } from './Footer.js';
 
 export function CreateEventPage() {
     const [eventName, setEventName] = useState("");
-    const [eventDate, setEventDate] = useState("");
-    const [eventLocation, setEventLocation] = useState("");
-    const [eventDesc, setEventDesc] = useState("");
+    const [date, setEventDate] = useState("");
+    const [location, setEventLocation] = useState("");
+    const [description, setEventDesc] = useState("");
     const [submitForm, setSubmitForm] = useState(false);
+    //const [imageUrl, setImageUrl] = useState("");
+    const db = getDatabase();
+    const dbEvents = ref(db, 'events');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("Successfully submitted event:", { eventName, eventDate, eventLocation, eventDesc } );
-        setSubmitForm(true);
-    }
+        const newEventData = {
+            eventName,
+            date,
+            location,
+            description,
+
+        };
+        try {
+            await push(dbEvents, newEventData);
+            setSubmitForm(true);
+        } catch (error) {
+            console.error('Error submitting event:', error);
+        }
+    };
 
     let submissionMessage = null;
     if(submitForm) {
@@ -30,16 +45,20 @@ export function CreateEventPage() {
                 </div>
                 <div className="event-form-group">
                     <label htmlFor="eventDate">When will your event take place?</label>
-                    <input type="date" id="eventDate" value={eventDate} onChange={event => setEventDate(event.target.value)} required />
+                    <input type="date" id="eventDate" value={date} onChange={event => setEventDate(event.target.value)} required />
                 </div>
                 <div className="event-form-group">
                     <label htmlFor="eventLocation">Where will your event be located?</label>
-                    <input type="text" id="eventLocation" value={eventLocation} onChange={event => setEventLocation(event.target.value)} required />
+                    <input type="text" id="eventLocation" value={location} onChange={event => setEventLocation(event.target.value)} required />
                 </div>
                 <div className="event-form-group">
                     <label htmlFor="eventDesc">Describe your event:</label>
-                    <textarea id="eventDesc" value={eventDesc} onChange={event => setEventDesc(event.target.value)} rows="8" required />
+                    <textarea id="eventDesc" value={description} onChange={event => setEventDesc(event.target.value)} rows="8" required />
                 </div>
+                {/* <div className="event-form-group">
+                    <label htmlFor="imageUrl"> Event Image link:</label>
+                    <input type="url" id="imageUrl" value={imageUrl} onChange={(event) => setImageUrl(event.target.value)} required />
+                </div> */}
                 <button type="submit">Submit Your Event</button>
             </form>
             {submissionMessage}
