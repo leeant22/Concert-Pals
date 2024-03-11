@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getDatabase, ref, onValue, child } from 'firebase/database';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 export function Cards({month}) {
     const db = getDatabase();
@@ -11,7 +11,7 @@ export function Cards({month}) {
         onValue(dbEvents, (snapshot) => {
             snapshot.forEach((childSnapshot) => {
                 const currentEvent = childSnapshot.val();
-                const eventMonth = currentEvent.date.substring(0, currentEvent.date.indexOf(' '));
+                const eventMonth = currentEvent.date.substring(5, 7);
                 if(month === "" || eventMonth === month) {
                     list.push(<CreateEvents key={count} name={currentEvent.eventName} date={currentEvent.date} location={currentEvent.location} path={currentEvent.path || "img/card2.png"} source={currentEvent.source || "Nainoa Shizuru"} />);
                 }
