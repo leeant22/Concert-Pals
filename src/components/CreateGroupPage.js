@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getDatabase, ref, push } from 'firebase/database';
 import { Footer } from './Footer.js';
 
@@ -15,7 +16,6 @@ export function CreateGroupPage() {
     const dbGroups = ref(db, 'groups');
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
 
         const newGroupData = {
             groupName,
@@ -44,7 +44,7 @@ export function CreateGroupPage() {
             <div className="event-creation-page">
                 <main>
                 <h2>Create Group</h2>
-                    <form onSubmit={handleSubmit} className="group-form">
+                    <form className="group-form">
                         <div className="event-form-group">
                             <label htmlFor="groupName">Group Name:</label>
                             <input type="text" id="groupName" value={groupName} onChange={(event) => setGroupName(event.target.value)} required />
@@ -69,7 +69,7 @@ export function CreateGroupPage() {
                             <label htmlFor="eventDate">Event Date:</label>
                             <input type="date" id="eventDate" value={eventDate} onChange={(event) => setEventDate(event.target.value)} required />
                         </div>
-                        <button type="submit" className="submit-button">Submit Your Group</button>
+                        <Link to={`/create-group/${groupName}`} onClick={handleSubmit} className="btn btn-primary">Submit Your Group</Link>
                     </form>
                     {submissionMessage}
                 </main>

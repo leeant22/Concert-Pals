@@ -7,6 +7,7 @@ import { CreateGroupPage } from './CreateGroupPage';
 import { GroupsPage } from './Groups.js';
 import { Route, Routes } from 'react-router-dom';
 import { ContactForm } from './Contact.js';
+import { SuccessPage } from './Success.js';
 
 function App(props) {
     return (
@@ -15,7 +16,8 @@ function App(props) {
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/groups" element={<GroupsPage/>}/>
-                <Route path="/create-group" element={<CreateGroupPage />} />
+                <Route path="/create-group" element={<CreateGroupPage />}/>
+                <Route path="/create-group/:success" element={<SuccessPage/>}/>
                 <Route path="/contact" element={<ContactForm/>}/>
                 <Route path="/create-event" element={<CreateEventPage/>}/>
                 <Route path="/profile" element={<Profile/>}/>
