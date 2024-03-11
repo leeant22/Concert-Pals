@@ -77,7 +77,7 @@ function CreateEvents({eventKey,name, date, location, path, source, handleDelete
                         <p className="card-text">Date: {date}</p>
                         <p className="card-text">Location: {location}</p>
                         <button className="btn btn-dark">Details</button>
-                        <button className="btn btn-danger" onClick={() => handleDelete(eventKey)}>Delete</button>
+                        <button className="btn btn-danger" style={{ marginLeft: '10px' }} onClick={() => handleDelete(eventKey)}>Delete</button>
                     </div>
                 </div>
             </div>
