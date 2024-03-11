@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getDatabase, ref, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue, remove } from 'firebase/database';
 
 export function Cards({month}) {
     const db = getDatabase();
@@ -13,13 +13,26 @@ export function Cards({month}) {
                 const currentEvent = childSnapshot.val();
                 const eventMonth = currentEvent.date.substring(5, 7);
                 if(month === "" || eventMonth === month) {
-                    list.push(<CreateEvents key={count} name={currentEvent.eventName} date={currentEvent.date} location={currentEvent.location} path={currentEvent.path || "img/card2.png"} source={currentEvent.source || "Nainoa Shizuru"} />);
+                    list.push(<CreateEvents key={count} name={currentEvent.eventName} date={currentEvent.date} location={currentEvent.location} path={currentEvent.path || "img/card2.png"} source={currentEvent.source || "Nainoa Shizuru"} handleDelete={handleDelete} />);
                 }
                 count += 1;
             })
             setEventList([...list]);
         })
     },[month]);
+    // new
+    const handleDelete = async (name) => {
+        try {
+            console.log('dbEvents:', dbEvents);
+            await remove(ref(dbEvents, name));
+            console.log(`Event '${name}' was deleted.`);
+        } catch (error) {
+            console.error('Error submitting event:', error);
+        }
+    }
+
+
+
     return (
         <div>
             <div className="container">
@@ -31,7 +44,7 @@ export function Cards({month}) {
     );
 }
 
-function CreateEvents({name, date, location, path, source}) {
+function CreateEvents({name, date, location, path, source, handleDelete}) {
     return (
         <div className="col-xl-3 col-md-6 d-flex">
             <div className="card mb-5">
@@ -43,6 +56,8 @@ function CreateEvents({name, date, location, path, source}) {
                         <p className="card-text">Date: {date}</p>
                         <p className="card-text">Location: {location}</p>
                         <button className="btn btn-dark">Details</button>
+                        {/* new */}
+                        <button className="btn btn-danger" onClick={() => handleDelete(name)}>Delete</button>
                     </div>
                 </div>
             </div>
