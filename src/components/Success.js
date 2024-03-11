@@ -8,6 +8,7 @@ export function SuccessPage() {
    return (
         <div className="success">
             <h1>Group { successId } Successfully Created!</h1>
+            <h3>Check the Groups page!</h3>
         </div>
    )
 }
