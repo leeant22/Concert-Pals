@@ -30,7 +30,7 @@ export function CreateEventPage() {
 
     let submissionMessage = null;
     if(submitForm) {
-        submissionMessage = <p>Your event has been submitted!</p>
+        submissionMessage = <p>Your event has been submitted! Check the Home page!</p>
     }
 
     return (
