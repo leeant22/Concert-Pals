@@ -5,30 +5,49 @@ export function Cards({month}) {
     const db = getDatabase();
     const dbEvents = ref(db, 'events');
     const [eventList, setEventList] = useState([]);
-    let count = 0;
+    const [deletion, setDeleted] = useState(false);
     useEffect(() => {
         const list = [];
+        let count = 0;
         onValue(dbEvents, (snapshot) => {
             snapshot.forEach((childSnapshot) => {
                 const currentEvent = childSnapshot.val();
                 const eventMonth = currentEvent.date.substring(5, 7);
+                const num = Math.floor(Math.random() * 4) + 1;
+                const eventSource = snapshot.val()[`event${num}`].source;
                 if(month === "" || eventMonth === month) {
-                    list.push(<CreateEvents key={count} name={currentEvent.eventName} date={currentEvent.date} location={currentEvent.location} path={currentEvent.path || "img/card2.png"} source={currentEvent.source || "Nainoa Shizuru"} handleDelete={handleDelete} />);
+                    list.push(<CreateEvents key={count} name={currentEvent.eventName} date={currentEvent.date} location={currentEvent.location} path={currentEvent.path || `img/card${num}.png`} source={currentEvent.source || eventSource} handleDelete={handleDelete}/>);
                 }
                 count += 1;
             })
             setEventList([...list]);
         })
-    },[month]);
-    // new
-    const handleDelete = async (name) => {
-        try {
-            console.log('dbEvents:', dbEvents);
-            await remove(ref(dbEvents, name));
-            console.log(`Event '${name}' was deleted.`);
-        } catch (error) {
-            console.error('Error submitting event:', error);
+    },[month, deletion]);
+
+    useEffect(() => {
+        if (deletion) {
+            setDeleted(false);
         }
+    }, [deletion]);
+
+    const handleDelete = async (name) => {
+        onValue(dbEvents, (snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+                const currentEvent = childSnapshot.val();
+                if(currentEvent.eventName === name) {
+                    const db = getDatabase();
+                    const childRef = ref(db, `events/${childSnapshot.key}`);
+                    remove(childRef)
+                        .then(() => {
+                            console.log(`Event removed successfully`);
+                        })
+                        .catch((error) => {
+                            console.error('Error removing event: ', error);
+                        });
+                }
+            })
+        });
+        setDeleted(true);
     }
 
 
@@ -56,7 +75,6 @@ function CreateEvents({name, date, location, path, source, handleDelete}) {
                         <p className="card-text">Date: {date}</p>
                         <p className="card-text">Location: {location}</p>
                         <button className="btn btn-dark">Details</button>
-                        {/* new */}
                         <button className="btn btn-danger" onClick={() => handleDelete(name)}>Delete</button>
                     </div>
                 </div>

@@ -8,7 +8,6 @@ export function CreateEventPage() {
     const [location, setEventLocation] = useState("");
     const [description, setEventDesc] = useState("");
     const [submitForm, setSubmitForm] = useState(false);
-    //const [imageUrl, setImageUrl] = useState("");
     const db = getDatabase();
     const dbEvents = ref(db, 'events');
 
@@ -55,10 +54,6 @@ export function CreateEventPage() {
                     <label htmlFor="eventDesc">Describe your event:</label>
                     <textarea id="eventDesc" value={description} onChange={event => setEventDesc(event.target.value)} rows="8" required />
                 </div>
-                {/* <div className="event-form-group">
-                    <label htmlFor="imageUrl"> Event Image link:</label>
-                    <input type="url" id="imageUrl" value={imageUrl} onChange={(event) => setImageUrl(event.target.value)} required />
-                </div> */}
                 <button type="submit">Submit Your Event</button>
             </form>
             {submissionMessage}
