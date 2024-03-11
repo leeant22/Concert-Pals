@@ -16,7 +16,7 @@ export function Cards({month}) {
                 const num = Math.floor(Math.random() * 4) + 1;
                 const eventSource = snapshot.val()[`event${num}`].source;
                 if(month === "" || eventMonth === month) {
-                    list.push(<CreateEvents key={count} name={currentEvent.eventName} date={currentEvent.date} location={currentEvent.location} path={currentEvent.path || `img/card${num}.png`} source={currentEvent.source || eventSource} handleDelete={handleDelete}/>);
+                    list.push(<CreateEvents key={count} eventKey={childSnapshot.key} name={currentEvent.eventName} date={currentEvent.date} location={currentEvent.location} path={currentEvent.path || `img/card${num}.png`} source={currentEvent.source || eventSource} handleDelete={handleDelete}/>);
                 }
                 count += 1;
             })
@@ -27,19 +27,21 @@ export function Cards({month}) {
     useEffect(() => {
         if (deletion) {
             setDeleted(false);
+            console.log("deletion is back to false");
         }
     }, [deletion]);
 
-    const handleDelete = async (name) => {
+    const handleDelete = async (eventKey) => {
         onValue(dbEvents, (snapshot) => {
             snapshot.forEach((childSnapshot) => {
-                const currentEvent = childSnapshot.val();
-                if(currentEvent.eventName === name) {
+                const currentEventKey = childSnapshot.key;
+                if(currentEventKey=== eventKey) {
                     const db = getDatabase();
                     const childRef = ref(db, `events/${childSnapshot.key}`);
                     remove(childRef)
                         .then(() => {
                             console.log(`Event removed successfully`);
+                            return;
                         })
                         .catch((error) => {
                             console.error('Error removing event: ', error);
@@ -63,7 +65,7 @@ export function Cards({month}) {
     );
 }
 
-function CreateEvents({name, date, location, path, source, handleDelete}) {
+function CreateEvents({eventKey,name, date, location, path, source, handleDelete}) {
     return (
         <div className="col-xl-3 col-md-6 d-flex">
             <div className="card mb-5">
@@ -75,7 +77,7 @@ function CreateEvents({name, date, location, path, source, handleDelete}) {
                         <p className="card-text">Date: {date}</p>
                         <p className="card-text">Location: {location}</p>
                         <button className="btn btn-dark">Details</button>
-                        <button className="btn btn-danger" onClick={() => handleDelete(name)}>Delete</button>
+                        <button className="btn btn-danger" onClick={() => handleDelete(eventKey)}>Delete</button>
                     </div>
                 </div>
             </div>
