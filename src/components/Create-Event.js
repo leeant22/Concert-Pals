@@ -13,12 +13,29 @@ export function CreateEventPage() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        let num = Math.floor(Math.random() * 4) + 1;
+        let eventSource = "";
+        if (num === 1){
+            eventSource = "Yvette de Wit";
+        } else if (num === 2){
+            eventSource = "Nainoa Shizuru";
+        } else if (num === 3){
+            eventSource = "Danny Howe";
+        } else{
+            eventSource = "Yannis Papanastasopoulos";
+        }
+
+        let source = eventSource;
+        let path = `img/card${num}.png`;
+
         const newEventData = {
             eventName,
             date,
             location,
             description,
-
+            source,
+            path
         };
         try {
             await push(dbEvents, newEventData);
